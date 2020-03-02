@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="to-do.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>To Do App</h3>
+        <p>Name: Anum Hassan</p>
+    </div>
+    <div>
+        <form >
+            <input type="text" placeholder="username" name="username">
+            <input type="button" onClick="createUser(this.form)" value="Login">      
+        </form>
+        <script>
+            // const createUser = async(username) => {
+            //     const response = await axios.post('https://hunter-todo-api.herokuapp.com/user', username);
+            //     console.log(response);
+            // }   
+            function print(form){
+                
+                console.log(form.username.value);
+            }
+            async function createUser(form){
+                const response = await axios.post('https://hunter-todo-api.herokuapp.com/user', form.username.value);
+                console.log(response);
+            }
+        </script>
+    </div>
+</body>
+</html>
